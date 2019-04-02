@@ -7,6 +7,14 @@
       <e p="ARGameJam.sln" t="IncludeFlat" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Cillians bits" t="Include">
+          <e p="Arrive.cs" t="Include" />
+          <e p="Boid.cs" t="Include" />
+          <e p="bullet.cs" t="Include" />
+          <e p="EnemyMove.cs" t="Include" />
+          <e p="Firing.cs" t="Include" />
+          <e p="SteeringBehaviour.cs" t="Include" />
+        </e>
         <e p="EnemyManager.cs" t="Include" />
         <e p="EnemySpawner.cs" t="Include" />
         <e p="PlaceObject.cs" t="Include" />
