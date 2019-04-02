@@ -9,6 +9,7 @@
       <e p="Assets" t="Include">
         <e p="EnemyManager.cs" t="Include" />
         <e p="EnemySpawner.cs" t="Include" />
+        <e p="PlaceObject.cs" t="Include" />
         <e p="Vuforia" t="Include">
           <e p="Databases" t="Include">
             <e p="Emulator" t="Include">
