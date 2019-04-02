@@ -10,6 +10,12 @@
         <e p="EnemyManager.cs" t="Include" />
         <e p="EnemySpawner.cs" t="Include" />
         <e p="PlaceObject.cs" t="Include" />
+        <e p="Scripts" t="Include">
+          <e p="EnemyHealthScript.cs" t="Include" />
+          <e p="HealthScript.cs" t="Include" />
+          <e p="ScoreManager.cs" t="Include" />
+          <e p="ShootingScript.cs" t="Include" />
+        </e>
         <e p="Vuforia" t="Include">
           <e p="Databases" t="Include">
             <e p="Emulator" t="Include">
