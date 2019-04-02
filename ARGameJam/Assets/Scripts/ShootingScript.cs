@@ -11,7 +11,7 @@ public class ShootingScript : MonoBehaviour
     public float timer;
     Ray shotRay;
     RaycastHit shotHit;
-    //ParticleSystem shotParticles;
+    ParticleSystem shotParticles;
     int shootableMask;
     LineRenderer shotLine;
     AudioSource shotAudio;
@@ -20,7 +20,7 @@ public class ShootingScript : MonoBehaviour
 
     private void Awake()
     {
-        //shotParticles =  GetComponent<ParticleSystem>();
+        shotParticles =  GetComponent<ParticleSystem>();
         shootableMask = LayerMask.GetMask("Shootable");
         shotLine = GetComponent<LineRenderer>();
         shotAudio = GetComponent<AudioSource>();
@@ -60,8 +60,8 @@ public class ShootingScript : MonoBehaviour
             shotAudio.Play();
             shotLight.enabled = true;
 
-            //shotParticles.Stop();
-            //shotPrticles.Play();
+            shotParticles.Stop();
+            shotParticles.Play();
 
             shotLine.enabled = true;
             shotLine.SetPosition(0, transform.position);

@@ -11,9 +11,9 @@ public class EnemyHealthScript : MonoBehaviour
     public AudioClip deathClip;
 
  
-    Animator anim;
+    //Animator anim;
     AudioSource enemyAudio;
-    ParticleSystem enemyParticles;
+    //ParticleSystem enemyParticles;
     CapsuleCollider collider;
 
     bool isDead;
@@ -22,10 +22,10 @@ public class EnemyHealthScript : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
         enemyAudio = GetComponent<AudioSource>();
         collider = GetComponent<CapsuleCollider>();
-        enemyParticles = GetComponent<ParticleSystem>();
+        //enemyParticles = GetComponent<ParticleSystem>();
 
         currentHealth = startingHealth;
     }
@@ -63,9 +63,10 @@ public class EnemyHealthScript : MonoBehaviour
         isDead = true;
 
         collider.isTrigger = true;
-        anim.SetTrigger("Death");
+       //anim.SetTrigger("Death");
         enemyAudio.clip = deathClip;
         enemyAudio.Play();
+        Destroy(this.gameObject);
     }
 
     public void StartSinking()
