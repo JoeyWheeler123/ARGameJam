@@ -8,7 +8,7 @@ public class ShootingScript : MonoBehaviour
     public float timeShots = .2f;
     public float range = 100f;
 
-    float timer;
+    public float timer;
     Ray shotRay;
     RaycastHit shotHit;
     //ParticleSystem shotParticles;
@@ -32,10 +32,10 @@ public class ShootingScript : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if(Input.GetButton("Shoot") && timer >= timeShots)
+        /*if(Input.GetButton("Fire1") && timer >= timeShots)
         {
             Shoot();
-        }
+        }*/
 
         if(timer >= timeShots * displayTime)
         {
@@ -49,34 +49,40 @@ public class ShootingScript : MonoBehaviour
         shotLight.enabled = false;
     }
 
-    void Shoot()
+    public void Shoot()
     {
-        timer = 0;
+        //timer = 0f;
 
-        shotAudio.Play();
-        shotLight.enabled = true;
-
-        //shotParticles.Stop();
-        //shotPrticles.Play();
-
-        shotLine.enabled = true;
-        shotLine.SetPosition(0, transform.position);
-        shotRay.origin = transform.position;
-        shotRay.direction = transform.forward;
-
-        if(Physics.Raycast(shotRay, range, shootableMask))
+        if (timer >= timeShots)
         {
-            EnemyHealthScript enemyHealth = shotHit.collider.GetComponent<EnemyHealthScript>();
+            timer = 0f;
 
-            if(enemyHealth !=null)
+            shotAudio.Play();
+            shotLight.enabled = true;
+
+            //shotParticles.Stop();
+            //shotPrticles.Play();
+
+            shotLine.enabled = true;
+            shotLine.SetPosition(0, transform.position);
+            shotRay.origin = transform.position;
+            shotRay.direction = transform.forward;
+
+            if (Physics.Raycast(shotRay, range, shootableMask))
             {
-                enemyHealth.TakeDamage(bulletDamage, shotHit.point);
+                EnemyHealthScript enemyHealth = shotHit.collider.GetComponent<EnemyHealthScript>();
+
+                if (enemyHealth != null)
+                {
+                    enemyHealth.TakeDamage(bulletDamage, shotHit.point);
+                }
+                shotLine.SetPosition(1, shotHit.point);
             }
-            shotLine.SetPosition(1, shotHit.point);
+            else
+            {
+                shotLine.SetPosition(1, shotRay.origin + shotRay.direction * range);
+            }
         }
-        else
-        {
-            shotLine.SetPosition(1, shotRay.origin + shotRay.direction * range);
-        }
+
     }
 }
