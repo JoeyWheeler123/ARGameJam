@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 356d6305a86dedd4d8b8c43f89895172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 736372451771727684, guid: 9636a5bdb147129469af4af1affbbcbd, type: 3}
+  player: {fileID: 1840044601303970033, guid: cbe267f80d30580448a7e0b8a800a010, type: 3}
   enemy: {fileID: 4746632168253891436, guid: 90d128f5a2429374b9685951268576f5, type: 3}
   rb: {fileID: 755384904179195595}
   speed: 10
