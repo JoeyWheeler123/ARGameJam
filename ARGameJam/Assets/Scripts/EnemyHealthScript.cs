@@ -66,6 +66,7 @@ public class EnemyHealthScript : MonoBehaviour
        //anim.SetTrigger("Death");
         enemyAudio.clip = deathClip;
         enemyAudio.Play();
+        ScoreManager.score += scoreValue;
         Destroy(this.gameObject);
     }
 
