@@ -29,17 +29,23 @@ public class Firing : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+       // if (other.gameObject.tag == "Player")
+       // {
             Debug.Log("Collison");
             Destroy(GetComponent<Arrive>());
-        StartCoroutine(shootPlayer());
+            Destroy(GetComponent<Boid>());
+          
+            StartCoroutine(shootPlayer());
+       // }
 
         
     }
 
     IEnumerator shootPlayer()
     {
+        Debug.Log("Start");
         yield return new WaitForSeconds(2.0f);
+        Debug.Log("Fire");
         Instantiate(bullet, transform.position, Quaternion.identity);
     }
 }
