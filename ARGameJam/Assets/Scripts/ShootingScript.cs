@@ -68,13 +68,16 @@ public class ShootingScript : MonoBehaviour
             shotRay.origin = transform.position;
             shotRay.direction = transform.forward;
 
-            if (Physics.Raycast(shotRay, range, shootableMask))
+            if (Physics.Raycast(shotRay, out shotHit, range, shootableMask))
             {
+                //Debug.Log("Hit");
+
                 EnemyHealthScript enemyHealth = shotHit.collider.GetComponent<EnemyHealthScript>();
 
                 if (enemyHealth != null)
                 {
                     enemyHealth.TakeDamage(bulletDamage, shotHit.point);
+
                 }
                 shotLine.SetPosition(1, shotHit.point);
             }

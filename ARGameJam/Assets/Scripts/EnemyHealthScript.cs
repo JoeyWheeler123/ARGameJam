@@ -10,6 +10,7 @@ public class EnemyHealthScript : MonoBehaviour
     public int scoreValue = 100;
     public AudioClip deathClip;
 
+ 
     Animator anim;
     AudioSource enemyAudio;
     ParticleSystem enemyParticles;
@@ -19,7 +20,7 @@ public class EnemyHealthScript : MonoBehaviour
     bool isSinking;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         anim = GetComponent<Animator>();
         enemyAudio = GetComponent<AudioSource>();
@@ -30,7 +31,7 @@ public class EnemyHealthScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if (isSinking)
         {
@@ -48,8 +49,8 @@ public class EnemyHealthScript : MonoBehaviour
         enemyAudio.Play();
 
         currentHealth -= amount;
-        enemyParticles.transform.position = hitPoint;
-        enemyParticles.Play();
+//        enemyParticles.transform.position = hitPoint;
+        //enemyParticles.Play();
 
         if(currentHealth <= 0)
         {
@@ -57,7 +58,7 @@ public class EnemyHealthScript : MonoBehaviour
         }
     }
 
-    void Death()
+    public void Death()
     {
         isDead = true;
 
