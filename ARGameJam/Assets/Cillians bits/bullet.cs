@@ -31,5 +31,14 @@ public class bullet : MonoBehaviour
         Destroy(this.gameObject, 2);
     }
 
-  
+    private void OnTriggerEnter(Collision other)
+    {
+        if(other.gameObject.tag == "player")
+        {
+            HealthScript health = GetComponent<HealthScript>();
+            health.currentHealth -= 20;
+            Debug.Log(health.currentHealth);
+        }
+    }
+
 }
