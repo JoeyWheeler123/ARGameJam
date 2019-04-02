@@ -29,10 +29,12 @@ public class Firing : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.tag == "Player")
+        {
             Debug.Log("Collison");
             Destroy(GetComponent<Arrive>());
-        StartCoroutine(shootPlayer());
+            StartCoroutine(shootPlayer());
+        }
 
         
     }
