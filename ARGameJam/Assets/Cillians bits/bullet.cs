@@ -31,11 +31,11 @@ public class bullet : MonoBehaviour
         Destroy(this.gameObject, 2);
     }
 
-    private void OnTriggerEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "player")
+        if(other.gameObject.tag == "Player")
         {
-            HealthScript health = GetComponent<HealthScript>();
+            HealthScript health = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthScript>();
             health.currentHealth -= 20;
             Debug.Log(health.currentHealth);
         }

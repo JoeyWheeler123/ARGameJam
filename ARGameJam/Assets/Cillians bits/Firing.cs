@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Firing : MonoBehaviour
 {
-
+    bool shooting;
     public GameObject player, bullet;
    
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(shootPlayer());
     }
 
     // Update is called once per frame
@@ -27,25 +27,28 @@ public class Firing : MonoBehaviour
     }
     
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-       // if (other.gameObject.tag == "Player")
-       // {
+       if (other.gameObject.tag == "Player")
+       {
             Debug.Log("Collison");
             Destroy(GetComponent<Arrive>());
             Destroy(GetComponent<Boid>());
-          
-            StartCoroutine(shootPlayer());
-       // }
+            shooting = true;
+       }
 
         
     }
 
     IEnumerator shootPlayer()
     {
-        Debug.Log("Start");
-        yield return new WaitForSeconds(2.0f);
-        Debug.Log("Fire");
-        Instantiate(bullet, transform.position, Quaternion.identity);
+        while (true) {
+            Debug.Log("Start");
+            if (shooting) {
+                Instantiate(bullet, transform.position, Quaternion.identity);
+            }
+            yield return new WaitForSeconds(2.0f);            
+        }
+        
     }
 }
