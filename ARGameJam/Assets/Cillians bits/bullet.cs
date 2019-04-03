@@ -8,6 +8,7 @@ public class bullet : MonoBehaviour
     public Transform player, enemy;
     public Rigidbody rb;
     Vector3 moveDirection;
+    public int bulletLifeTime;
 
     public float speed = 5;
 
@@ -28,7 +29,7 @@ public class bullet : MonoBehaviour
     void DestroyObjectDelayed()
     {
         // Kills the game object in 5 seconds after loading the object
-        Destroy(this.gameObject, 2);
+        Destroy(this.gameObject, bulletLifeTime);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -44,8 +44,8 @@ public class EnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             GameObject tempEnemy = Instantiate(enemyPrefab, RandomPosition(), Quaternion.identity);
             tempEnemy.transform.parent = groundPlain.transform;
-            tempEnemy.GetComponent<MeshRenderer>().enabled = false;
-            tempEnemy.GetComponent<BoxCollider>().enabled = false;
+            //tempEnemy.GetComponent<MeshRenderer>().enabled = false;
+            //tempEnemy.GetComponent<BoxCollider>().enabled = false;
             EnemysRef.Add(tempEnemy);
             enemyCount++;
         }
