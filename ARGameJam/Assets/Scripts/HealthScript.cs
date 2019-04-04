@@ -18,6 +18,8 @@ public class HealthScript : MonoBehaviour
     Animator anim;
     AudioSource audio;
 
+    public GameObject deathScreen;
+
     bool damaged;
     bool isdead;
 
@@ -63,11 +65,13 @@ public class HealthScript : MonoBehaviour
     {
         isdead = true;
 
-        anim.SetTrigger("Death");
+        //anim.SetTrigger("Death");
 
         audio.clip = deathClip;
         audio.Play();
 
         shooting.enabled = false;
+
+        deathScreen.SetActive(true);
     }
 }
