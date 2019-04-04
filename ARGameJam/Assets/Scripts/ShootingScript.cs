@@ -12,6 +12,7 @@ public class ShootingScript : MonoBehaviour
     Ray shotRay;
     RaycastHit shotHit;
     ParticleSystem shotParticles;
+    public Animator anim;
     int shootableMask;
     LineRenderer shotLine;
     AudioSource shotAudio;
@@ -25,7 +26,7 @@ public class ShootingScript : MonoBehaviour
         shotLine = GetComponent<LineRenderer>();
         shotAudio = GetComponent<AudioSource>();
         shotLight = GetComponent<Light>();
-
+        //anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -52,6 +53,7 @@ public class ShootingScript : MonoBehaviour
     public void Shoot()
     {
         //timer = 0f;
+        anim.enabled = false;
 
         if (timer >= timeShots)
         {
@@ -62,6 +64,10 @@ public class ShootingScript : MonoBehaviour
 
             shotParticles.Stop();
             shotParticles.Play();
+
+            //anim.enabled = false;
+            anim.enabled = true;
+            StartCoroutine(StopAnim());
 
             shotLine.enabled = true;
             shotLine.SetPosition(0, transform.position);
@@ -85,7 +91,15 @@ public class ShootingScript : MonoBehaviour
             {
                 shotLine.SetPosition(1, shotRay.origin + shotRay.direction * range);
             }
+            //anim.enabled = false;
         }
 
+    }
+
+    IEnumerator StopAnim()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        anim.enabled = false;
     }
 }

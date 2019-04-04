@@ -351,6 +351,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 465.9
       objectReference: {fileID: 0}
+    - target: {fileID: 582192363454148712, guid: daab7292ed75d41dca18efffa65d096f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 582192363698254802, guid: daab7292ed75d41dca18efffa65d096f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 582192363273322963, guid: daab7292ed75d41dca18efffa65d096f,
         type: 3}
       propertyPath: m_Sprite
@@ -575,6 +585,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &973260172 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1342441680913689992, guid: 45095c0ce486e43ada324b86501ca982,
+    type: 3}
+  m_PrefabInstance: {fileID: 1356770830}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1042905103 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3209457576544039432, guid: a529adc55900f8044b3497ceff32860a,
@@ -821,6 +837,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ARCamera(Player)
       objectReference: {fileID: 0}
+    - target: {fileID: 7164039913207116370, guid: 45095c0ce486e43ada324b86501ca982,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 973260172}
     - target: {fileID: 7164039914240705069, guid: 45095c0ce486e43ada324b86501ca982,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -886,6 +907,55 @@ PrefabInstance:
       propertyPath: damageFlash
       value: 
       objectReference: {fileID: 341982404}
+    - target: {fileID: 1342441680664285497, guid: 45095c0ce486e43ada324b86501ca982,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342441680913689992, guid: 45095c0ce486e43ada324b86501ca982,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164039913207116380, guid: 45095c0ce486e43ada324b86501ca982,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164039913207116380, guid: 45095c0ce486e43ada324b86501ca982,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164039913207116380, guid: 45095c0ce486e43ada324b86501ca982,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 849361837, guid: 45095c0ce486e43ada324b86501ca982, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 849361837, guid: 45095c0ce486e43ada324b86501ca982, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 849361837, guid: 45095c0ce486e43ada324b86501ca982, type: 3}
+      propertyPath: lengthInSec
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 947978068, guid: 45095c0ce486e43ada324b86501ca982, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 947978068, guid: 45095c0ce486e43ada324b86501ca982, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 947978068, guid: 45095c0ce486e43ada324b86501ca982, type: 3}
+      propertyPath: lengthInSec
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45095c0ce486e43ada324b86501ca982, type: 3}
 --- !u!1 &1651744502
