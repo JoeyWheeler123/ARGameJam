@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a821e1667ea3b54597e14dde903c716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 7986096270866505898, guid: 54fe4bbd923d7ae43a18e2e73686672c, type: 3}
+  player: {fileID: 0}
   bullet: {fileID: 9219710481353947635, guid: ae08482cf064ed74e9851f3ab7d0615e, type: 3}
   fireRange: 0
 --- !u!114 &6816131309196828187
@@ -187,8 +187,7 @@ MonoBehaviour:
   boid: {fileID: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   slowingDistance: 15
-  targetGameObject: {fileID: 7986096270866505898, guid: 54fe4bbd923d7ae43a18e2e73686672c,
-    type: 3}
+  targetGameObject: {fileID: 0}
 --- !u!135 &4749871959709590708
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -197,8 +196,8 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4945849873671244495}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
+  m_IsTrigger: 0
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 12.197915
   m_Center: {x: 0.014895439, y: -1.0172157, z: 0.41106892}

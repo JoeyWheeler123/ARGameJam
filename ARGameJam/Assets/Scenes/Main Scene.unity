@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -180,6 +180,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 971629523, guid: a529adc55900f8044b3497ceff32860a, type: 3}
+      propertyPath: EnemyPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 971629523, guid: a529adc55900f8044b3497ceff32860a, type: 3}
       propertyPath: startEnemyCount
       value: 3
       objectReference: {fileID: 0}
@@ -187,6 +191,11 @@ PrefabInstance:
       propertyPath: planeSize
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 971629523, guid: a529adc55900f8044b3497ceff32860a, type: 3}
+      propertyPath: EnemyPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 219361471628799748, guid: d0939acb23e644ced95cd4cdf1111d5f,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a529adc55900f8044b3497ceff32860a, type: 3}
 --- !u!1 &151015504
@@ -986,8 +995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03b2ff7d9da89f84ebe2c20bf03816a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3209457576544039445, guid: a529adc55900f8044b3497ceff32860a,
-    type: 3}
+  EnemyPrefabs: []
   ground: {fileID: 0}
   planeSize: 0.05
   spawnTime: 0

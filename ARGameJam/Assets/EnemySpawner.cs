@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemyPrefab;
+    public GameObject[] EnemyPrefabs;
     public GameObject ground;
     private GameObject GM;
     public float planeSize;
@@ -57,11 +57,13 @@ public class EnemySpawner : MonoBehaviour
     {
         spawnEnemyRunning = true;
                 yield return new WaitForSeconds(spawnTime);
-                GameObject tempEnemy = Instantiate(enemyPrefab, RandomPosition(), Quaternion.identity);
+                int ran = Random.Range(0, 2);
+                GameObject tempEnemy = Instantiate(EnemyPrefabs[ran], transform.position, Quaternion.identity);
                 //tempEnemy.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
                 //tempEnemy.transform.parent = groundPlain.transform;
                 //tempEnemy.GetComponentInChildren<MeshRenderer>().enabled = false;
                 //tempEnemy.GetComponent<BoxCollider>().enabled = false;
+                tempEnemy.transform.position = RandomPosition();
                 EnemysRef.Add(tempEnemy);
         spawnEnemyRunning = false;
         //yield return new WaitForSeconds(0.1f);
