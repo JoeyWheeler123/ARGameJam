@@ -11,10 +11,12 @@ GameObject:
   - component: {fileID: 7037545011506117499}
   - component: {fileID: 8458262490478148064}
   - component: {fileID: 7737771750171039581}
+  - component: {fileID: 3368511788193077858}
   - component: {fileID: 8224382269732568388}
   - component: {fileID: 9170633955403257844}
   - component: {fileID: 5105759111880696996}
-  m_Layer: 0
+  - component: {fileID: 6752614924341218443}
+  m_Layer: 9
   m_Name: Tank Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,6 +72,23 @@ MonoBehaviour:
   banking: 0.1
   maxSpeed: 5
   maxForce: 10
+--- !u!114 &3368511788193077858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2342451223694743344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc460a3d52b04b65a8a017578906071, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 150
+  currentHealth: 0
+  deathSpeed: 2.5
+  scoreValue: 100
+  deathClip: {fileID: 8300000, guid: c74c0a67b382a4210b32309ae2be47d7, type: 3}
 --- !u!114 &8224382269732568388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1840044601303970034, guid: cbe267f80d30580448a7e0b8a800a010, type: 3}
   bullet: {fileID: 9219710481353947635, guid: ae08482cf064ed74e9851f3ab7d0615e, type: 3}
-  fireRange: 10
+  fireRange: 40
 --- !u!114 &9170633955403257844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +139,102 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &6752614924341218443
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2342451223694743344}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c74c0a67b382a4210b32309ae2be47d7, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &254678550396705940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131,6 +246,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyJoe
+      objectReference: {fileID: 0}
+    - target: {fileID: 7981737552577043107, guid: 57083bcea857989479a64e15813c95b0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1771917974587456702, guid: 57083bcea857989479a64e15813c95b0,
         type: 3}
@@ -207,6 +327,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 9.8
       objectReference: {fileID: 0}
+    - target: {fileID: 4428208981923336286, guid: 57083bcea857989479a64e15813c95b0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57083bcea857989479a64e15813c95b0, type: 3}
 --- !u!4 &1954512521182617642 stripped
@@ -226,6 +351,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy_Spawn_Particle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1732452343587672057, guid: 9cda3bd9d3ff22b4c8fa5f6b907b8af7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1732452343587672056, guid: 9cda3bd9d3ff22b4c8fa5f6b907b8af7,
         type: 3}
@@ -286,6 +416,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1732452343292318018, guid: 9cda3bd9d3ff22b4c8fa5f6b907b8af7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1732452343330604075, guid: 9cda3bd9d3ff22b4c8fa5f6b907b8af7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1732452343636803810, guid: 9cda3bd9d3ff22b4c8fa5f6b907b8af7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1732452343684548481, guid: 9cda3bd9d3ff22b4c8fa5f6b907b8af7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1732452343292318023, guid: 9cda3bd9d3ff22b4c8fa5f6b907b8af7,
         type: 3}

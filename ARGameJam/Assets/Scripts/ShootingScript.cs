@@ -53,7 +53,7 @@ public class ShootingScript : MonoBehaviour
     public void Shoot()
     {
         //timer = 0f;
-        anim.enabled = false;
+        //anim.enabled = false;
 
         if (timer >= timeShots)
         {
