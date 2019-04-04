@@ -38,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.localScale += Vector3.one* Time.deltaTime;
+        //gameObject.transform.localScale += Vector3.one* Time.deltaTime;
         //ResetPlaneLocation();
         if (MaxEnemiesSpawned() == false && spawnEnemyRunning == false /*&& planeFound*/)
         {
@@ -57,7 +57,7 @@ public class EnemySpawner : MonoBehaviour
     {
         spawnEnemyRunning = true;
                 yield return new WaitForSeconds(spawnTime);
-                GameObject tempEnemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+                GameObject tempEnemy = Instantiate(enemyPrefab, RandomPosition(), Quaternion.identity);
                 //tempEnemy.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
                 //tempEnemy.transform.parent = groundPlain.transform;
                 //tempEnemy.GetComponentInChildren<MeshRenderer>().enabled = false;

@@ -72,8 +72,8 @@ public class EnemyHealthScript : MonoBehaviour
     public void Death()
     {
         EnemysRef.Remove(gameObject);
-        Destroy(this.gameObject);
-        return;
+        
+        //return;
         // TAKE RETURN STATEMENT OUT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         isDead = true;
 

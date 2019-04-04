@@ -252,32 +252,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbe267f80d30580448a7e0b8a800a010, type: 3}
---- !u!1 &971629519 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3209457576544039445, guid: a529adc55900f8044b3497ceff32860a,
+--- !u!114 &971629523 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 971629523, guid: a529adc55900f8044b3497ceff32860a,
     type: 3}
   m_PrefabInstance: {fileID: 3209457576049206747}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &971629523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 971629519}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03b2ff7d9da89f84ebe2c20bf03816a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 2444330073940750141, guid: 76c32e037c30cd446b1718018113c182,
-    type: 3}
-  ground: {fileID: 0}
-  planeSize: 1
-  spawnTime: 1
-  enemyCount: 0
-  startEnemyCount: 1
-  planeFound: 0
 --- !u!1001 &989360350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -542,7 +528,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 3209457576049206747}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 971629519}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57f4bb1823ed10146a48ffdb57a450ba, type: 3}

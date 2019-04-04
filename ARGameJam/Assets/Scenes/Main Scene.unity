@@ -179,6 +179,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 971629523, guid: a529adc55900f8044b3497ceff32860a, type: 3}
+      propertyPath: startEnemyCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 971629523, guid: a529adc55900f8044b3497ceff32860a, type: 3}
+      propertyPath: planeSize
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a529adc55900f8044b3497ceff32860a, type: 3}
 --- !u!1001 &341982402
@@ -475,8 +483,10 @@ MonoBehaviour:
     type: 3}
   ground: {fileID: 0}
   planeSize: 0.05
+  spawnTime: 0
   enemyCount: 0
   startEnemyCount: 2
+  planeFound: 0
 --- !u!4 &1107256810
 Transform:
   m_ObjectHideFlags: 0
@@ -676,12 +686,12 @@ PrefabInstance:
     - target: {fileID: 7164039914240705069, guid: 45095c0ce486e43ada324b86501ca982,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.57
+      value: 4.46
       objectReference: {fileID: 0}
     - target: {fileID: 7164039914240705069, guid: 45095c0ce486e43ada324b86501ca982,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.13
+      value: -31.83
       objectReference: {fileID: 0}
     - target: {fileID: 7164039914240705069, guid: 45095c0ce486e43ada324b86501ca982,
         type: 3}
