@@ -55,7 +55,7 @@ public class Firing : MonoBehaviour
     IEnumerator shootPlayer()
     {
         while (true) {
-            Debug.Log("Start");
+            //Debug.Log("Start");
             if (shooting) {
                 Instantiate(bullet, transform.position, Quaternion.identity);
             }

@@ -37,7 +37,8 @@ public class bullet : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             HealthScript health = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthScript>();
-            health.currentHealth -= 20;
+            //health.currentHealth -= 20;
+            health.Damage(20);
             Debug.Log(health.currentHealth);
         }
     }

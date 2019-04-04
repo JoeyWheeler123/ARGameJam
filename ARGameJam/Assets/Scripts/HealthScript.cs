@@ -46,7 +46,7 @@ public class HealthScript : MonoBehaviour
         damaged = false;
     }
 
-    void Damage(int amount)
+    public void Damage(int amount)
     {
         damaged = true;
         currentHealth -= amount;

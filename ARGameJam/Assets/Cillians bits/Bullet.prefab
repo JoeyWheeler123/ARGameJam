@@ -109,7 +109,7 @@ MonoBehaviour:
   enemy: {fileID: 4746632168253891436, guid: 90d128f5a2429374b9685951268576f5, type: 3}
   rb: {fileID: 755384904179195595}
   bulletLifeTime: 5
-  speed: 10
+  speed: 30
 --- !u!54 &755384904179195595
 Rigidbody:
   m_ObjectHideFlags: 0

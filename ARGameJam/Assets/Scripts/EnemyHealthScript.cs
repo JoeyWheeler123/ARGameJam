@@ -11,7 +11,7 @@ public class EnemyHealthScript : MonoBehaviour
     public AudioClip deathClip;
 
  
-    //Animator anim;
+    Animator anim;
     AudioSource enemyAudio;
     //ParticleSystem enemyParticles;
     CapsuleCollider collider;
@@ -22,7 +22,7 @@ public class EnemyHealthScript : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        //anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
         enemyAudio = GetComponent<AudioSource>();
         collider = GetComponent<CapsuleCollider>();
         //enemyParticles = GetComponent<ParticleSystem>();
