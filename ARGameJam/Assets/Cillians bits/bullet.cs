@@ -16,6 +16,7 @@ public class bullet : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        player = GameObject.FindWithTag("Player").transform;
         moveDirection = (player.transform.position - transform.position).normalized * speed;
         rb.velocity = new Vector3(moveDirection.x, moveDirection.y, moveDirection.z);
     }

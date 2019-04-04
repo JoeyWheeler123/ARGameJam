@@ -10,7 +10,13 @@ public class Arrive: SteeringBehaviour
     public float slowingDistance = 15.0f;
 
     public GameObject targetGameObject = null;
+
+    public void Start()
+    {
+        targetGameObject = GameObject.FindWithTag("Player");
         
+    }
+    
     public override Vector3 Calculate()
     {
         return boid.ArriveForce(targetPosition, slowingDistance);

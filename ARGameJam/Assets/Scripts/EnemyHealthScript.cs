@@ -9,6 +9,9 @@ public class EnemyHealthScript : MonoBehaviour
     public float deathSpeed = 2.5f;
     public int scoreValue = 100;
     public AudioClip deathClip;
+    private GameObject GM;
+    
+    private List<GameObject> EnemysRef;
 
  
     Animator anim;
@@ -26,13 +29,21 @@ public class EnemyHealthScript : MonoBehaviour
         enemyAudio = GetComponent<AudioSource>();
         collider = GetComponent<CapsuleCollider>();
         //enemyParticles = GetComponent<ParticleSystem>();
-
+        GM = GameObject.FindGameObjectWithTag("GM");
+       
         currentHealth = startingHealth;
     }
 
     // Update is called once per frame
     public void Update()
     {
+        
+        EnemysRef = GM.GetComponent<EnemyManager>().Enemys;
+        if(currentHealth <= 0)
+        {
+            Death();
+        }
+        
         if (isSinking)
         {
             transform.Translate(-Vector3.up * deathSpeed * Time.deltaTime);
@@ -60,6 +71,10 @@ public class EnemyHealthScript : MonoBehaviour
 
     public void Death()
     {
+        EnemysRef.Remove(gameObject);
+        Destroy(this.gameObject);
+        return;
+        // TAKE RETURN STATEMENT OUT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         isDead = true;
 
         collider.isTrigger = true;
@@ -67,6 +82,7 @@ public class EnemyHealthScript : MonoBehaviour
         enemyAudio.clip = deathClip;
         enemyAudio.Play();
         ScoreManager.score += scoreValue;
+        EnemysRef.Remove(gameObject);
         Destroy(this.gameObject);
     }
 
