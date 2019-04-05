@@ -295,6 +295,8 @@ MonoBehaviour:
   deathSpeed: 2.5
   scoreValue: 100
   deathClip: {fileID: 8300000, guid: 801df67525f63423c9470cd21d1dfc1b, type: 3}
+  explosionEffect: {fileID: 7979924277638920970, guid: 0d4fa98178b01b7499e11242305ef35b,
+    type: 3}
 --- !u!1 &9212916974721763857
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,16 +356,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9212916974721763871}
     m_Modifications:
-    - target: {fileID: 1732452343587672057, guid: 9cda3bd9d3ff22b4c8fa5f6b907b8af7,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy_Spawn_Particle
-      objectReference: {fileID: 0}
-    - target: {fileID: 1732452343587672057, guid: 9cda3bd9d3ff22b4c8fa5f6b907b8af7,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 1732452343587672056, guid: 9cda3bd9d3ff22b4c8fa5f6b907b8af7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -418,6 +410,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1732452343587672057, guid: 9cda3bd9d3ff22b4c8fa5f6b907b8af7,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy_Spawn_Particle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1732452343587672057, guid: 9cda3bd9d3ff22b4c8fa5f6b907b8af7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1732452343292318018, guid: 9cda3bd9d3ff22b4c8fa5f6b907b8af7,
         type: 3}

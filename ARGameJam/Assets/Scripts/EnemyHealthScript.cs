@@ -10,6 +10,7 @@ public class EnemyHealthScript : MonoBehaviour
     public int scoreValue = 100;
     public AudioClip deathClip;
     private GameObject GM;
+    public GameObject explosionEffect;
     
     private List<GameObject> EnemysRef;
 
@@ -78,6 +79,7 @@ public class EnemyHealthScript : MonoBehaviour
         isDead = true;
 
         collider.isTrigger = true;
+        Instantiate(explosionEffect, transform.position, Quaternion.identity);
        //anim.SetTrigger("Death");
         enemyAudio.clip = deathClip;
         enemyAudio.Play();
