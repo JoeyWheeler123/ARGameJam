@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject[] EnemyPrefabs;
+    public GameObject[] SpawnLocations;
     public GameObject ground;
     private GameObject GM;
     public float planeSize;
@@ -49,7 +51,7 @@ public class EnemySpawner : MonoBehaviour
         {
             StopCoroutine(SpawnEnemy());
         }*/
-        //Debug.Log(MaxEnemiesSpawned());
+        Debug.Log(MaxEnemiesSpawned());
     }
 
 
@@ -57,15 +59,16 @@ public class EnemySpawner : MonoBehaviour
     {
         spawnEnemyRunning = true;
                 yield return new WaitForSeconds(spawnTime);
-                int ran = Random.Range(0, 2);
-                GameObject tempEnemy = Instantiate(EnemyPrefabs[ran], transform.position, Quaternion.identity);
+                int ran = Random.Range(0, EnemyPrefabs.Length);
+                int ranSpawn = Random.Range(0, SpawnLocations.Length);
+                GameObject tempEnemy = Instantiate(EnemyPrefabs[ran], RandomPosition(), Quaternion.identity);
                 //tempEnemy.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
                 //tempEnemy.transform.parent = groundPlain.transform;
                 //tempEnemy.GetComponentInChildren<MeshRenderer>().enabled = false;
                 //tempEnemy.GetComponent<BoxCollider>().enabled = false;
-                tempEnemy.transform.position = RandomPosition();
+                //tempEnemy.transform.position = RandomPosition();
                 EnemysRef.Add(tempEnemy);
-        spawnEnemyRunning = false;
+                spawnEnemyRunning = false;
         //yield return new WaitForSeconds(0.1f);
         //enemyCount++;
 
@@ -74,13 +77,13 @@ public class EnemySpawner : MonoBehaviour
     
     public Vector3 RandomPosition()
     {
-        Mesh planeMesh = ground.GetComponent<MeshFilter>().mesh;
-        Bounds bounds = planeMesh.bounds;
-
-        float minX = ground.transform.position.x - ground.transform.localScale.x * bounds.size.x * 0.5f;
-        float maxX = ground.transform.position.x + ground.transform.localScale.x * bounds.size.x * 0.5f;
-        float minZ = ground.transform.position.z - ground.transform.localScale.z * bounds.size.z * 0.5f;
-        float maxZ = ground.transform.position.z + ground.transform.localScale.z * bounds.size.z * 0.5f;
+        //Mesh planeMesh = ground.GetComponent<MeshFilter>().mesh;
+        //Bounds bounds = planeMesh.bounds;
+        GetComponent<MeshRenderer>().material.color = Color.green;
+        float minX = ground.transform.position.x - ground.transform.localScale.x * planeSize* 5 * 0.5f;
+        float maxX = ground.transform.position.x + ground.transform.localScale.x * planeSize* 5 * 0.5f;
+        float minZ = ground.transform.position.z - ground.transform.localScale.z * planeSize* 5 * 0.5f;
+        float maxZ = ground.transform.position.z + ground.transform.localScale.z * planeSize* 5 * 0.5f;
 
 
         Vector3 newVec = new Vector3(Random.Range (minX, maxX),
@@ -97,10 +100,14 @@ public class EnemySpawner : MonoBehaviour
 
     public IEnumerator GetDetectedPlane()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(Time.deltaTime);
 
         tempPlane = GameObject.Find("New Game Object").transform.GetChild(0).gameObject;
-        ground = GameObject.CreatePrimitive(PrimitiveType.Plane);
+        if (ground == null)
+        {
+            ground = GameObject.CreatePrimitive(PrimitiveType.Plane);
+        }
+
         ground.transform.position = new Vector3(tempPlane.transform.position.x, tempPlane.transform.position.y, tempPlane.transform.position.z + planeSize*5);
         ground.transform.localScale = new Vector3(planeSize,planeSize,planeSize);
         ground.GetComponent<MeshRenderer>().enabled = false;
