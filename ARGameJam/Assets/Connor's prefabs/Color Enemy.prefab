@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   bullet: {fileID: 9219710481353947635, guid: ae08482cf064ed74e9851f3ab7d0615e, type: 3}
-  fireRange: 15
+  fireRange: 20
 --- !u!114 &1819356490941266896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +148,7 @@ SphereCollider:
   m_GameObject: {fileID: 219361471628799748}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 12.197915
   m_Center: {x: 0.014895439, y: -1.0172157, z: 0.41106892}
@@ -178,10 +178,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.913966
-  m_Height: 5.115695
+  m_Radius: 1.7887833
+  m_Height: 3.8017173
   m_Direction: 1
-  m_Center: {x: -0.13603377, y: 0.7048793, z: 0}
+  m_Center: {x: -0.2350018, y: 0.8122575, z: 0}
 --- !u!82 &5163487308326232737
 AudioSource:
   m_ObjectHideFlags: 0

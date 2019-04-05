@@ -104,7 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   bullet: {fileID: 9219710481353947635, guid: ae08482cf064ed74e9851f3ab7d0615e, type: 3}
-  fireRange: 25
+  fireRange: 30
 --- !u!114 &9170633955403257844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,7 +374,7 @@ PrefabInstance:
     - target: {fileID: 1732452343587672056, guid: 9cda3bd9d3ff22b4c8fa5f6b907b8af7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.72
       objectReference: {fileID: 0}
     - target: {fileID: 1732452343587672056, guid: 9cda3bd9d3ff22b4c8fa5f6b907b8af7,
         type: 3}
@@ -384,7 +384,7 @@ PrefabInstance:
     - target: {fileID: 1732452343587672056, guid: 9cda3bd9d3ff22b4c8fa5f6b907b8af7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 5.7
       objectReference: {fileID: 0}
     - target: {fileID: 1732452343587672056, guid: 9cda3bd9d3ff22b4c8fa5f6b907b8af7,
         type: 3}
@@ -426,10 +426,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1732452343330604074, guid: 9cda3bd9d3ff22b4c8fa5f6b907b8af7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.58
+      objectReference: {fileID: 0}
     - target: {fileID: 1732452343636803809, guid: 9cda3bd9d3ff22b4c8fa5f6b907b8af7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.8
+      value: -2.86
       objectReference: {fileID: 0}
     - target: {fileID: 1732452343292318018, guid: 9cda3bd9d3ff22b4c8fa5f6b907b8af7,
         type: 3}
