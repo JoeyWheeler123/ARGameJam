@@ -189,7 +189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 971629523, guid: a529adc55900f8044b3497ceff32860a, type: 3}
       propertyPath: startEnemyCount
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 971629523, guid: a529adc55900f8044b3497ceff32860a, type: 3}
       propertyPath: planeSize
